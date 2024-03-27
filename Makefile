@@ -32,7 +32,7 @@ go: output_dir ## Generates all the Golang source files
 	# generate go code and docs
 	@docker run \
         -v $(PWD):/$(SRC_DIR) \
-        namely/protoc-all -f $(PWD):/$(SRC_DIR)simplegrpc.proto -l go
+        namely/protoc-all -f *.proto -l go
 
 .PHONY: grpcui
 ALL_PROTOS = $(shell find ./pkg -name '*.proto')
@@ -40,7 +40,7 @@ grpcui: ## Start the gRPC UI; an interactive API playground
 ifeq ($(shell which grpcui),)
 	GO111MODULE=off go get -u github.com/fullstorydev/grpcui/cmd/grpcui
 endif
-	@grpcui -import-path ./protos -import-path ./third_party $(foreach var, $(ALL_PROTOS), -proto "$(var)") $(if $(host),$(host),"")
+	@grpcui -import-path ./protos -import-path ./third_party $(foreach var, $(ALL_PROTOS), -proto "$(var)") $(if $(host),$(host),"localhost:50051")
 
 ### Mock generator
 .PHONY: mocks

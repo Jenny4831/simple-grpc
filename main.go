@@ -5,7 +5,8 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Jenny4831/simple-grpc/pkg/gen/pb-go"
+	pb "simplegrpc/pkg/pb-go/github.com/Jenny4831/simple-grpc"
+
 	"google.golang.org/grpc"
 )
 
@@ -22,7 +23,7 @@ func main() {
 	}
 
 	s := grpc.NewServer()
-	// pb.RegisterGreeterServer(s, &server{})
+	pb.RegisterGreeterServer(s, &server{})
 
 	log.Println("Server listening on port 50051")
 	if err := s.Serve(lis); err != nil {
