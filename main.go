@@ -13,7 +13,12 @@ import (
 type server struct{}
 
 func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloResponse, error) {
-	return &pb.HelloResponse{Message: "Hello, " + req.GetName()}, nil
+	// TODO: Implement the SayHello method
+	// return message with "Hello, <name in request>"
+
+	// Homework 2
+	// extract items from metadata in context
+	return nil, nil
 }
 
 func main() {
