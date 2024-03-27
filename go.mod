@@ -1,4 +1,4 @@
-module simplegrpc
+module github.com/Jenny4831/simple-grpc
 
 go 1.22.0
 

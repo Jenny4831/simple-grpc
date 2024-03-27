@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	pb "simplegrpc/pkg/pb-go/github.com/Jenny4831/simple-grpc"
+	pb "github.com/Jenny4831/simple-grpc/pkg/pb-go/simple-grpc"
 
 	"google.golang.org/grpc"
 )
