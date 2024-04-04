@@ -18,6 +18,7 @@ func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloR
 
 	// Homework 2
 	// extract items from metadata in context
+
 	return nil, nil
 }
 
