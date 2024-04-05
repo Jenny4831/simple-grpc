@@ -6,6 +6,6 @@ help:
 ALL_PROTOS = $(shell find ./pkg -name '*.proto')
 grpcui: ## Start the gRPC UI; an interactive API playground
 ifeq ($(shell which grpcui),)
-	GO111MODULE=off go get -u github.com/fullstorydev/grpcui/cmd/grpcui
+	brew install grpcui
 endif
 	@grpcui -plaintext -import-path ./pkg -import-path ./third_party $(foreach var, $(ALL_PROTOS), -proto "$(var)") $(if $(host),$(host),"localhost:50051")

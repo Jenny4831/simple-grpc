@@ -15,11 +15,11 @@ type server struct{}
 func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloResponse, error) {
 	// TODO: Implement the SayHello method
 	// return message with "Hello, <name in request>"
-
+	return &pb.HelloResponse{Message: "Hello, " + req.Name}, nil
 	// Homework 2
 	// extract items from metadata in context
 
-	return nil, nil
+	// return nil, nil
 }
 
 func main() {
